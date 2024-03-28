@@ -1594,6 +1594,9 @@ cfg_if! {
     } else if #[cfg(target_os = "hurd")] {
         mod hurd;
         pub use self::hurd::*;
+    } else if #[cfg(target_os = "aero")] {
+        mod mlibc;
+        pub use self::mlibc::*;
     } else {
         // Unknown target_os
     }
